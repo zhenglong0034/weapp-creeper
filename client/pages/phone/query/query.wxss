@@ -1,0 +1,44 @@
+.search {
+  width: 100%;
+  text-align: center;
+  line-height: 20px;
+  margin-top: 150px;
+  background-color: white;
+  top: 0px;
+  position: sticky;
+}
+.search .search-text {
+  font-size: 16px
+}
+.search .search-input {
+  box-sizing: border-box;
+  border: 1px solid gray;
+  width: calc(100% - 10px);
+  border: 1px solid red;
+  margin-top: 10px;
+  border-radius: 3px;
+  height: 30px;
+  display: inline-block;
+}
+/* .result-list {
+  transform: translateY(150px)
+} */
+.result {
+  width: calc(100% - 22px);
+  margin: 5px 5px;
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+.result image {
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+}
+.result-text {
+  vertical-align: middle;
+  display: inline-block
+}
+.result-price {
+  color: red;
+  margin-right: 10px
+}

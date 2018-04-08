@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/phone/query/query",
+    "pages/phone/phone"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/index",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "pages/addCgi",
+      "pages": [
+        "addCgi"
+      ]
+    }
+  ],
+  "window":{
+    "backgroundColor": "#ffa500",
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ffa500",
+    "navigationBarTitleText": "全栈杂项",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor": "#82B769",
+    "list": [
+      {
+        "pagePath": "pages/phone/query/query",
+        "text": "查询",
+        "iconPath": "pages/phone/list.png",
+        "selectedIconPath": "pages/phone/list.png"
+      },
+      {
+        "pagePath": "pages/phone/phone",
+        "text": "最新",
+        "iconPath": "pages/phone/list.png",
+        "selectedIconPath": "pages/phone/list.png"
+      }
+    ]
+  }
+}

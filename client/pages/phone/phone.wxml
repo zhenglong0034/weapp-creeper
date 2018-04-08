@@ -1,0 +1,16 @@
+<view>
+  <view wx:for="{{list}}" wx:key="{{index}}">
+    <view class="item-title">{{index}}</view>
+    <view wx:for="{{item}}" wx:for-item="childItem" wx:for-index="idx" class="child-item">
+      <view><image src="{{childItem.pic}}"></image></view>
+      <view class="child-item-text">
+        {{childItem.name}}
+        <view>{{childItem.desc}}</view>
+        <view class="child-item-price-time">
+          ￥{{childItem.price}}
+          <text>{{childItem.up_time}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

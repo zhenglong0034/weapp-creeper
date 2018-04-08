@@ -1,0 +1,19 @@
+<view animation="{{animationData}}" class="parent">
+  <view  class="search">
+    <view class="search-text">手机搜索</view>
+    <input confirm-type="search" bindinput="bindKeyInput" bindconfirm="submit" class="search-input"/>
+  </view>
+  <view class="result-list">
+    <view wx:for="{{list}}" wx:for-item="childItem" wx:for-index="idx" class="result">
+      <image src="{{childItem.pic}}"></image>
+      <view class="result-text">
+        {{childItem.name}}
+        <view>{{childItem.desc}}</view>
+        <view>
+          <text class="result-price">￥{{childItem.price}}</text>
+          <text>{{childItem.up_time}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

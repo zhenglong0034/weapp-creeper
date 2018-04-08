@@ -1,0 +1,34 @@
+image {
+  width: 100px;
+  height: 100px
+}
+.item-title {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  min-height: 50px;
+  line-height: 50px;
+  position: sticky;
+  top: 0;
+  background-color: white
+}
+.child-item {
+  width: calc(50% - 12px);
+  min-height: 130px;
+  padding: 10px 0px;
+  font-size: 11px;
+  text-align: center;
+  margin: 5px;
+  border: 1px solid gainsboro;
+  display: inline-block;
+}
+.child-item-price-time {
+  color: red;
+}
+.child-item-price-time > text {
+  color: red;
+  display: inline-block;
+  margin: 5px;
+  color: gray
+}
