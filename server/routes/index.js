@@ -18,8 +18,10 @@ router.get('/user', validationMiddleware, controllers.user)
 
 //获取 爬虫的 手机 信息接口
 router.get('/phone/info', controllers.phone.get)
-//搜索 手机 信息接口
+//搜索 手机 信息接口 暂时废弃
 router.post('/search/phone', controllers.phone.query)
+//搜索 商品 信息接口
+router.post('/search/goods', controllers.goods)
 // --- 图片上传 Demo --- //
 // 图片上传接口，小程序端可以直接将 url 填入 wx.uploadFile 中
 router.post('/upload', controllers.upload)

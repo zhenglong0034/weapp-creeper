@@ -1,20 +1,30 @@
 const mysql = require('../tools/connect')
 var moment = require('moment')
-const {creeper} = require('../creeper/index')
+const { creeper } = require('../creeper/index')
+const { searchGoods } = require('../creeper/search')
 
-async function getPhoneList(name, method) {
+async function getPhoneList(key, method) {
   let obj = {}
-  if(name || method === 'POST') {
+  if(key || method === 'POST') {
     return new Promise(resolve => {
-      if(!name) {
+      if(!key) {
         return resolve([])
       }
-      return mysql('phoneInfo').where('name', 'like', `%${name}%`).then(res => {
-        res.forEach((element) => {
-          element.up_time = moment(element.up_time).format('YYYY-MM-DD HH:mm:ss')
-        });
-        obj = res
-        resolve(obj)
+      const search = searchGoods(encodeURIComponent(key))
+      const p = new Promise(resolve => {
+        search.then(() => {
+          return mysql('searchInfo').select().where({
+            type: key
+          }).then(res => {
+            res.forEach((element) => {
+              element.up_time = moment(element.up_time).format('YYYY-MM-DD HH:mm:ss')
+            });
+            resolve(res)
+          })
+        })
+      })
+      p.then(res => {
+        resolve(res)
       })
     })
   }

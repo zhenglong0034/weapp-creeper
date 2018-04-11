@@ -26,6 +26,10 @@ image {
 .child-item-price-time {
   color: red;
 }
+.child-item-text .desc {
+  height: 14px;
+  overflow: hidden;
+}
 .child-item-price-time > text {
   color: red;
   display: inline-block;

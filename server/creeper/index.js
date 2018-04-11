@@ -24,7 +24,9 @@ function creeper () {
         var titles = [];
         //由于咱们发现此网页的编码格式为gb2312，所以需要对其进行转码，否则乱码
         //依据：“<meta http-equiv="Content-Type" content="text/html; charset=gb2312">”
-        var html = iconv.decode(Buffer.concat(chunks), 'utf-8');
+        var html = iconv.decode(chunks, 'utf-8');
+        // console.log('===============', chunks)
+        // console.log('++++++++++++++++', Buffer.concat(chunks))
         var $ = cheerio.load(html, {decodeEntities: false,ignoreWhitespace: true});
         // console.log($('#J_4954155005 .other textarea'))
         // console.log(html)
@@ -36,6 +38,7 @@ function creeper () {
             let src = $(child).find('a img').data('lazyload-src') ? $(child).find('a img').data('lazyload-src') : $(child).find('a img').data('ks-lazyload')
             let nextRoute = $(child).find('a').attr('href')
             titles.push({
+              platform: '天猫',
               name: $(child).find('.mod-g-tit').text(),
               price: $(child).find('.mod-g-nprice').text().replace(/[^0-9]/g, ''),
               desc: $(child).find('.mod-g-desc').text(),
@@ -44,7 +47,7 @@ function creeper () {
               route: 'http:' + nextRoute,
             })
             // console.log('-------====', titles[titles.length - 1])
-            operate.saveInfo(titles[titles.length - 1]).then((res) => {
+            operate.saveInfo(titles[titles.length - 1], 'phoneInfo').then((res) => {
               resolve({res, leng: titles.length})
             })
           })

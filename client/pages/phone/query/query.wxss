@@ -4,7 +4,7 @@
   line-height: 20px;
   margin-top: 150px;
   background-color: white;
-  top: 0px;
+  top: 150px;
   position: sticky;
 }
 .search .search-text {
@@ -36,7 +36,10 @@
 }
 .result-text {
   vertical-align: middle;
-  display: inline-block
+  font-size: 13px;
+  width: calc(100% - 105px);
+  padding-left: 5px;
+  display: inline-block;
 }
 .result-price {
   color: red;

@@ -1,6 +1,6 @@
 <view animation="{{animationData}}" class="parent">
   <view  class="search">
-    <view class="search-text">手机搜索</view>
+    <view class="search-text">搜索比价</view>
     <input confirm-type="search" bindinput="bindKeyInput" bindconfirm="submit" class="search-input"/>
   </view>
   <view class="result-list">

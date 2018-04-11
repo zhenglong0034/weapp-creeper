@@ -19,7 +19,7 @@ Page({
       data: {
         key: this.data.key
       },
-      url: config.service.host + '/weapp/search/phone',
+      url: config.service.host + '/weapp/search/goods',
       success: (res) => {
         console.log(res)
         this.setData({ list: res.data.data }, () => {
