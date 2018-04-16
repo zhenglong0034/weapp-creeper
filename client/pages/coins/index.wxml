@@ -1,0 +1,19 @@
+<view animation="{{animationData}}" class="parent">
+  <view  class="search">
+    <view class="search-text">数字货币</view>
+    <input confirm-type="search" bindinput="bindKeyInput" bindconfirm="submit" class="search-input"/>
+  </view>
+  <view class="result-list">
+    <view wx:for="{{list}}" wx:for-item="childItem" wx:for-index="idx" class="result">
+      <view class="result-text">
+        {{childItem.name}}
+        <view>{{childItem.coin}}  {{childItem.mount}}</view>
+        <view>
+          <text class="result-price">￥{{childItem.price}}</text>
+          <text>{{childItem.up_time}}</text>
+        </view>
+      </view>
+      <image wx:for="{{childItem.payment}}" wx:for-item="childpay" src="{{childpay}}"></image>
+    </view>
+  </view>
+</view>

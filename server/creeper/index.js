@@ -33,7 +33,6 @@ function creeper () {
         // console.log(operate.selectInfo())
         $('.mui-zebra-module').each(function (idx, element) {
           var type = $(element).find('.focus-bd a').text() ? $(element).find('.focus-bd a').text() : $(element).find('.floor-focus p').text()
-          console.log(type)
           $($($(element).find('textarea')).val()).find('li .mod-g').each((id, child) => {
             let src = $(child).find('a img').data('lazyload-src') ? $(child).find('a img').data('lazyload-src') : $(child).find('a img').data('ks-lazyload')
             let nextRoute = $(child).find('a').attr('href')

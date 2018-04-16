@@ -12,8 +12,8 @@
 }
 .search .search-input {
   box-sizing: border-box;
-  border: 1px solid rgb(143, 139, 139);
   width: calc(100% - 10px);
+  border: 1px solid rgb(143, 139, 139);
   margin-top: 10px;
   border-radius: 3px;
   height: 30px;
@@ -29,8 +29,8 @@
   border: 1px solid #ddd;
 }
 .result image {
-  width: 100px;
-  height: 100px;
+  width: 28px;
+  height: 28px;
   vertical-align: middle;
 }
 .result-text {

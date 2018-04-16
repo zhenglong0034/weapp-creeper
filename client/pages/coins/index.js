@@ -1,4 +1,4 @@
-var config = require('../../../config')
+var config = require('../../config')
 
 Page({
   data: {
@@ -19,14 +19,14 @@ Page({
       data: {
         key: this.data.key
       },
-      url: config.service.host + '/weapp/search/goods',
+      url: config.service.host + '/weapp/search/coins',
       success: (res) => {
         console.log(res)
         this.setData({ list: res.data.data }
-        //   ,
+        // ,
         //   () => {
         //   if(this.data.list.length) this.anima()
-        //  }
+        // }
        )
       }
     })

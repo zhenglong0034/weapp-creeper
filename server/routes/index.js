@@ -22,6 +22,8 @@ router.get('/phone/info', controllers.phone.get)
 router.post('/search/phone', controllers.phone.query)
 //搜索 商品 信息接口
 router.post('/search/goods', controllers.goods)
+//搜索 商品 信息接口
+router.post('/search/coins', controllers.coins)
 // --- 图片上传 Demo --- //
 // 图片上传接口，小程序端可以直接将 url 填入 wx.uploadFile 中
 router.post('/upload', controllers.upload)

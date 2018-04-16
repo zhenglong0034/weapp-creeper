@@ -3,9 +3,9 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-// var host = 'https://hm5933w6.qcloud.la';
+var host = 'https://hm5933w6.qcloud.la';
 // 本地环境
-var host = 'http://localhost:5757';
+// var host = 'http://localhost:5757';
 
 var config = {
 

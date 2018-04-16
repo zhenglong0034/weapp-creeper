@@ -37,13 +37,20 @@ CREATE TABLE `cSessionInfo` (
 --  Table structure for `phoneInfo`
 -- ----------------------------
 
-DROP TABLE IF EXISTS `phoneType`;
-CREATE TABLE `phoneType` (
+DROP TABLE IF EXISTS `coinsInfo`;
+CREATE TABLE `coinsInfo` (
   `id` INT UNSIGNED AUTO_INCREMENT,
-  `platform` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY (`platform`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='手机品牌';
+  `name` varchar(100) NOT NULL,
+  `trust` varchar(10) NOT NULL,
+  `payment` varchar(150) NOT NULL,
+  `mount` varchar(50) NOT NULL,
+  `up_time` timestamp NOT NULL,
+  `last_price_time` timestamp NOT NULL,
+  `coin` VARCHAR(10),
+  `price` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_price` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='虚拟数字币';
 
 DROP TABLE IF EXISTS `phoneInfo`;
 CREATE TABLE `phoneInfo` (

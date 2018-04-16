@@ -5,7 +5,6 @@ function saveInfo(info, table) {
   const name = info.name
   const query = table === 'searchInfo' ? {name, type: info.type, platform: info.platform} : {name}
   return mysql(table).where(query).then((res) => {
-      console.log(res)
       if(res[0] && res[0].name) {
         return mysql(table).where(query).update({
           up_time: moment().format('YYYY-MM-DD HH:mm:ss'),
@@ -42,7 +41,38 @@ function selectInfo() {
     })
 }
 
+function saveCoin(info, idx) {
+ console.log('______________', info)
+ return mysql('coinsInfo').where({
+   coin: info.coin
+ }).del().then(() => {
+  //  if(res[idx] && res[idx].name) {
+  //    return mysql('coinsInfo').where({
+  //     coin: info.coin
+  //   }).update({
+  //     up_time: moment().format('YYYY-MM-DD HH:mm:ss'),
+  //     last_price_time: res[idx].up_time,
+  //     price: info.price,
+  //     payment: info.payment,
+  //     mount: info.mount,
+  //     name: info.name,
+  //     last_price: res[idx].price,
+  //   })
+  return mysql('coinsInfo').insert({
+    name: info.name,
+    up_time: moment().format('YYYY-MM-DD HH:mm:ss'),
+    last_price_time: moment().format('YYYY-MM-DD HH:mm:ss'),
+    price: info.price,
+    last_price: info.price,
+    mount: info.mount,
+    payment: info.payment,
+    coin: info.coin,
+    trust: info.trust
+  }).return({inserted: true})
+ })
+}
 module.exports = {
     saveInfo,
-    selectInfo
+    selectInfo,
+    saveCoin
 }
